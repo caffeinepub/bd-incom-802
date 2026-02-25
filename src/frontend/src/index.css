@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Tiro+Bangla:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Green & Gold fintech palette */
+    --background: 0.12 0.02 145;
+    --foreground: 0.97 0.01 90;
+
+    --card: 0.16 0.025 145;
+    --card-foreground: 0.97 0.01 90;
+
+    --popover: 0.18 0.025 145;
+    --popover-foreground: 0.97 0.01 90;
+
+    /* Primary: vibrant green */
+    --primary: 0.72 0.18 145;
+    --primary-foreground: 0.08 0.01 145;
+
+    /* Secondary: gold/amber */
+    --secondary: 0.78 0.16 75;
+    --secondary-foreground: 0.08 0.01 75;
+
+    --muted: 0.22 0.02 145;
+    --muted-foreground: 0.65 0.04 145;
+
+    --accent: 0.78 0.16 75;
+    --accent-foreground: 0.08 0.01 75;
+
+    --destructive: 0.58 0.22 25;
+    --destructive-foreground: 0.97 0.01 90;
+
+    --border: 0.28 0.04 145;
+    --input: 0.22 0.03 145;
+    --ring: 0.72 0.18 145;
+
+    --chart-1: 0.72 0.18 145;
+    --chart-2: 0.78 0.16 75;
+    --chart-3: 0.65 0.15 200;
+    --chart-4: 0.70 0.18 30;
+    --chart-5: 0.60 0.20 300;
+
+    --sidebar: 0.14 0.02 145;
+    --sidebar-foreground: 0.97 0.01 90;
+    --sidebar-primary: 0.72 0.18 145;
+    --sidebar-primary-foreground: 0.08 0.01 145;
+    --sidebar-accent: 0.22 0.03 145;
+    --sidebar-accent-foreground: 0.97 0.01 90;
+    --sidebar-border: 0.28 0.04 145;
+    --sidebar-ring: 0.72 0.18 145;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'Tiro Bangla', system-ui, sans-serif;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .gold-gradient {
+    background: linear-gradient(135deg, oklch(0.78 0.16 75), oklch(0.68 0.18 55));
+  }
+  .green-gradient {
+    background: linear-gradient(135deg, oklch(0.55 0.18 145), oklch(0.40 0.15 145));
+  }
+  .hero-gradient {
+    background: linear-gradient(135deg, oklch(0.14 0.04 145) 0%, oklch(0.10 0.03 160) 50%, oklch(0.12 0.04 130) 100%);
+  }
+  .card-glow {
+    box-shadow: 0 0 20px oklch(0.72 0.18 145 / 0.15), 0 4px 16px oklch(0 0 0 / 0.4);
+  }
+  .gold-glow {
+    box-shadow: 0 0 20px oklch(0.78 0.16 75 / 0.3), 0 4px 16px oklch(0 0 0 / 0.4);
+  }
+  .spin-animation {
+    animation: spin-wheel 3s cubic-bezier(0.17, 0.67, 0.12, 0.99) forwards;
+  }
+  @keyframes spin-wheel {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(1440deg); }
+  }
+  .pulse-gold {
+    animation: pulse-gold 2s ease-in-out infinite;
+  }
+  @keyframes pulse-gold {
+    0%, 100% { box-shadow: 0 0 10px oklch(0.78 0.16 75 / 0.4); }
+    50% { box-shadow: 0 0 25px oklch(0.78 0.16 75 / 0.8); }
+  }
+  .text-gold {
+    color: oklch(0.78 0.16 75);
+  }
+  .text-green-bright {
+    color: oklch(0.72 0.18 145);
+  }
+  .bg-card-dark {
+    background-color: oklch(0.16 0.025 145);
+  }
+  .border-gold {
+    border-color: oklch(0.78 0.16 75 / 0.4);
+  }
+  .border-green {
+    border-color: oklch(0.72 0.18 145 / 0.4);
+  }
+}
